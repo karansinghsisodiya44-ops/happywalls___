@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HappyWalls – House Painting Services | Interior & Exterior Painters</title>
+    <meta name="description" content="HappyWalls provides professional interior & exterior house painting, texture walls, waterproofing and colour consultation. Get an instant estimate & free site visit." />
+    <meta name="theme-color" content="#f97316" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orange: {
+                            500: '#f97316',
+                            600: '#ea580c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-neutral-50 text-neutral-900">
+    <div id="app">
+        <!-- Navbar -->
+        <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-neutral-200">
+            <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+                <div class="flex items-center gap-3 cursor-pointer" id="home-link"> 
+                    <svg viewBox="0 0 64 64" class="w-9 h-9" aria-label="HappyWalls logo">
+                        <defs>
+                            <linearGradient id="g" x1="0" x2="1">
+                                <stop offset="0%" stop-color="#fb923c" />
+                                <stop offset="100%" stop-color="#f59e0b" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="4" y="24" width="56" height="36" rx="6" fill="#0f172a" opacity=".08"/>
+                        <path d="M8 32 L32 14 L56 32 V54 H8 Z" fill="#0ea5e9"/>
+                        <rect x="24" y="38" width="16" height="16" fill="#eab308"/>
+                        <rect x="28" y="42" width="3" height="3" fill="#0f172a"/>
+                        <rect x="34" y="42" width="3" height="3" fill="#0f172a"/>
+                        <rect x="28" y="48" width="3" height="3" fill="#0f172a"/>
+                        <rect x="34" y="48" width="3" height="3" fill="#0f172a"/>
+                        <path d="M4 28 Q32 4 60 28" fill="none" stroke="url(#g)" stroke-width="6"/>
+                    </svg>
+                    <div class="leading-tight">
+                        <div class="font-extrabold text-xl tracking-tight">HappyWalls</div>
+                        <div class="text-xs text-neutral-500">Adding Colors to Your Happiness</div>
+                    </div>
+                </div>
+
+                <nav class="hidden md:flex items-center gap-6">
+                    <button data-section="about" class="text-sm font-medium text-neutral-700 hover:text-neutral-900">About</button>
+                    <button data-section="services" class="text-sm font-medium text-neutral-700 hover:text-neutral-900">Services</button>
+                    <button data-section="calculator" class="text-sm font-medium text-neutral-700 hover:text-neutral-900">Estimate</button>
+                    <button data-section="gallery" class="text-sm font-medium text-neutral-700 hover:text-neutral-900">Gallery</button>
+                    <button data-section="testimonials" class="text-sm font-medium text-neutral-700 hover:text-neutral-900">Reviews</button>
+                    <button data-section="process" class="text-sm font-medium text-neutral-700 hover:text-neutral-900">Process</button>
+                    <button data-section="faq" class="text-sm font-medium text-neutral-700 hover:text-neutral-900">FAQ</button>
+                    <button data-section="contact" class="text-sm font-medium text-neutral-700 hover:text-neutral-900">Contact</button>
+                    <button data-section="calculator" class="px-4 py-2 rounded-2xl bg-orange-500 text-white font-semibold shadow hover:bg-orange-600">Get Estimate</button>
+                </nav>
+
+                <button class="md:hidden p-2 rounded-xl border" id="mobile-menu-button" aria-label="Menu">☰</button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden border-t bg-white">
+                <div class="max-w-7xl mx-auto px-4 py-3 grid gap-2">
+                    <button data-section="about" class="text-left py-2">About</button>
+                    <button data-section="services" class="text-left py-2">Services</button>
+                    <button data-section="calculator" class="text-left py-2">Estimate</button>
+                    <button data-section="gallery" class="text-left py-2">Gallery</button>
+                    <button data-section="testimonials" class="text-left py-2">Reviews</button>
+                    <button data-section="process" class="text-left py-2">Process</button>
+                    <button data-section="faq" class="text-left py-2">FAQ</button>
+                    <button data-section="contact" class="text-left py-2">Contact</button>
+                    <button data-section="calculator" class="px-4 py-2 rounded-xl bg-orange-500 text-white font-semibold">Get Estimate</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero -->
+        <section id="home" class="relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+                        Transform Your Home with <span class="text-orange-600">Professional Painting</span>
+                    </h1>
+                    <p class="mt-4 text-neutral-700 text-lg max-w-prose">
+                        We deliver spotless finishes, vibrant colours, and on-time completion. From quick refreshes to designer textures—our experts handle it all.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <button data-section="calculator" class="px-5 py-3 rounded-2xl bg-orange-500 text-white font-semibold shadow hover:bg-orange-600">Get Free Estimate</button>
+                        <button data-section="services" class="px-5 py-3 rounded-2xl border font-semibold">Explore Services</button>
+                    </div>
+                    <div class="mt-6 flex items-center gap-6 text-sm text-neutral-600">
+                        <span>✓ 10+ Years Experience</span>
+                        <span>✓ 500+ Projects</span>
+                        <span>✓ Clean & Hassle‑free</span>
+                    </div>
+                </div>
+                <div class="p-6 rounded-2xl border bg-white shadow-sm">
+                    <div class="aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-orange-100 via-white to-orange-50 grid place-items-center">
+                        <div class="text-center">
+                            <div class="mx-auto w-16 h-16">
+                                <svg viewBox="0 0 64 64" class="w-16 h-16" aria-label="HappyWalls logo">
+                                    <defs>
+                                        <linearGradient id="g" x1="0" x2="1">
+                                            <stop offset="0%" stop-color="#fb923c" />
+                                            <stop offset="100%" stop-color="#f59e0b" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect x="4" y="24" width="56" height="36" rx="6" fill="#0f172a" opacity=".08"/>
+                                    <path d="M8 32 L32 14 L56 32 V54 H8 Z" fill="#0ea5e9"/>
+                                    <rect x="24" y="38" width="16" height="16" fill="#eab308"/>
+                                    <rect x="28" y="42" width="3" height="3" fill="#0f172a"/>
+                                    <rect x="34" y="42" width="3" height="3" fill="#0f172a"/>
+                                    <rect x="28" y="48" width="3" height="3" fill="#0f172a"/>
+                                    <rect x="34" y="48" width="3" height="3" fill="#0f172a"/>
+                                    <path d="M4 28 Q32 4 60 28" fill="none" stroke="url(#g)" stroke-width="6"/>
+                                </svg>
+                            </div>
+                            <div class="mt-3 font-extrabold text-lg">HappyWalls Certified Team</div>
+                            <div class="text-sm text-neutral-600">Protective covering • Low‑VOC paints • Dust‑free sanding</div>
+                        </div>
+                    </div>
+                    <ul class="mt-4 grid gap-3 text-sm">
+                        <li class="p-3 rounded-xl bg-neutral-50 border">✔ Free colour consultation</li>
+                        <li class="p-3 rounded-xl bg-neutral-50 border">✔ Premium brands & tools</li>
+                        <li class="p-3 rounded-xl bg-neutral-50 border">✔ Transparent pricing—no surprises</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pointer-events-none absolute -top-10 -right-10 w-80 h-80 rounded-full bg-orange-200 opacity-40 blur-3xl"></div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-5">
+                    <h2 class="text-3xl font-extrabold">About Us</h2>
+                    <p class="text-neutral-700">
+                        <strong>HappyWalls</strong> is a trusted house painting company on a mission to fill your home with colour and comfort. Our trained team focuses on meticulous prep, premium materials, and tidy execution—so you get gorgeous walls without the mess.
+                    </p>
+                    <ul class="grid grid-cols-2 gap-3 text-sm">
+                        <li class="p-3 bg-neutral-50 rounded-xl border">✔ 10+ years experience</li>
+                        <li class="p-3 bg-neutral-50 rounded-xl border">✔ 500+ homes painted</li>
+                        <li class="p-3 bg-neutral-50 rounded-xl border">✔ Certified & insured team</li>
+                        <li class="p-3 bg-neutral-50 rounded-xl border">✔ On-time delivery</li>
+                    </ul>
+                </div>
+                <div class="aspect-[4/3] rounded-2xl overflow-hidden border shadow bg-gradient-to-br from-orange-100 via-white to-orange-50 flex items-center justify-center">
+                    <svg viewBox="0 0 64 64" class="w-40 h-40" aria-label="HappyWalls logo">
+                        <defs>
+                            <linearGradient id="g" x1="0" x2="1">
+                                <stop offset="0%" stop-color="#fb923c" />
+                                <stop offset="100%" stop-color="#f59e0b" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="4" y="24" width="56" height="36" rx="6" fill="#0f172a" opacity=".08"/>
+                        <path d="M8 32 L32 14 L56 32 V54 H8 Z" fill="#0ea5e9"/>
+                        <rect x="24" y="38" width="16" height="16" fill="#eab308"/>
+                        <rect x="28" y="42" width="3" height="3" fill="#0f172a"/>
+                        <rect x="34" y="42" width="3" height="3" fill="#0f172a"/>
+                        <rect x="28" y="48" width="3" height="3" fill="#0f172a"/>
+                        <rect x="34" y="48" width="3" height="3" fill="#0f172a"/>
+                        <path d="M4 28 Q32 4 60 28" fill="none" stroke="url(#g)" stroke-width="6"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="py-16 bg-neutral-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl font-extrabold">Services</h2>
+                <p class="mt-2 text-neutral-700">Complete painting solutions for every space.</p>
+                <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div class="p-5 bg-white rounded-2xl border shadow-sm hover:shadow-md transition">
+                        <div class="text-xl font-bold">Interior Painting</div>
+                        <p class="mt-2 text-sm text-neutral-700">Bedrooms, living rooms, kitchens—smooth finishes and zero stains.</p>
+                    </div>
+                    <div class="p-5 bg-white rounded-2xl border shadow-sm hover:shadow-md transition">
+                        <div class="text-xl font-bold">Exterior Painting</div>
+                        <p class="mt-2 text-sm text-neutral-700">Weatherproof coatings for long‑lasting shine and protection.</p>
+                    </div>
+                    <div class="p-5 bg-white rounded-2xl border shadow-sm hover:shadow-md transition">
+                        <div class="text-xl font-bold">Texture & Feature Walls</div>
+                        <p class="mt-2 text-sm text-neutral-700">Designer textures, stencils, and accent walls that pop.</p>
+                    </div>
+                    <div class="p-5 bg-white rounded-2xl border shadow-sm hover:shadow-md transition">
+                        <div class="text-xl font-bold">Waterproofing</div>
+                        <p class="mt-2 text-sm text-neutral-700">Terrace & wall damp‑proofing with warranty options.</p>
+                    </div>
+                    <div class="p-5 bg-white rounded-2xl border shadow-sm hover:shadow-md transition">
+                        <div class="text-xl font-bold">Wood & Metal</div>
+                        <p class="mt-2 text-sm text-neutral-700">Doors, windows, grills—smooth enamel and polish work.</p>
+                    </div>
+                    <div class="p-5 bg-white rounded-2xl border shadow-sm hover:shadow-md transition">
+                        <div class="text-xl font-bold">Rental Refresh</div>
+                        <p class="mt-2 text-sm text-neutral-700">Quick, budget‑friendly repainting for moving in/out.</p>
+                    </div>
+                    <div class="p-5 bg-white rounded-2xl border shadow-sm hover:shadow-md transition">
+                        <div class="text-xl font-bold">Colour Consultation</div>
+                        <p class="mt-2 text-sm text-neutral-700">Expert guidance to choose perfect palettes.</p>
+                    </div>
+                    <div class="p-5 bg-white rounded-2xl border shadow-sm hover:shadow-md transition">
+                        <div class="text-xl font-bold">Deep Cleaning</div>
+                        <p class="mt-2 text-sm text-neutral-700">Pre & post‑paint site protection and clean‑up.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estimate Calculator -->
+        <section id="calculator" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-start">
+                <div class="p-6 rounded-2xl border shadow-sm">
+                    <h2 class="text-2xl font-extrabold">Instant Quote Calculator</h2>
+                    <p class="mt-1 text-sm text-neutral-600">Rough estimate for planning. Final quote after site visit.</p>
+                    <div class="mt-5 grid sm:grid-cols-2 gap-4">
+                        <label class="grid gap-1 text-sm">
+                            <span>Approx. Paintable Area (sqft)</span>
+                            <input id="area-input" type="number" min="0" placeholder="e.g., 1200" class="px-3 py-2 rounded-xl border" />
+                        </label>
+                        <label class="grid gap-1 text-sm">
+                            <span>No. of Rooms</span>
+                            <input id="rooms-input" type="number" min="1" value="1" class="px-3 py-2 rounded-xl border" />
+                        </label>
+                        <label class="grid gap-1 text-sm">
+                            <span>Quality</span>
+                            <select id="quality-select" class="px-3 py-2 rounded-xl border">
+                                <option value="economy">Economy</option>
+                                <option value="standard" selected>Standard</option>
+                                <option value="premium">Premium</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="mt-4 flex gap-3">
+                        <button id="calculate-btn" class="px-4 py-2 rounded-2xl bg-orange-500 text-white font-semibold">Calculate</button>
+                        <button id="reset-btn" class="px-4 py-2 rounded-2xl border">Reset</button>
+                    </div>
+                    <div id="estimate-result" class="mt-6 hidden grid grid-cols-3 gap-4 text-center">
+                        <div class="p-4 rounded-2xl border bg-neutral-50">
+                            <div class="text-xs text-neutral-500">Paint Cost</div>
+                            <div id="paint-cost" class="text-xl font-extrabold mt-1">₹0</div>
+                        </div>
+                        <div class="p-4 rounded-2xl border bg-neutral-50">
+                            <div class="text-xs text-neutral-500">Labour</div>
+                            <div id="labour-cost" class="text-xl font-extrabold mt-1">₹0</div>
+                        </div>
+                        <div class="p-4 rounded-2xl border bg-orange-50 border-orange-200">
+                            <div class="text-xs text-neutral-500">Approx Total</div>
+                            <div id="total-cost" class="text-xl font-extrabold mt-1">₹0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lead Form -->
+                <div class="p-6 rounded-2xl border shadow-sm">
+                    <h3 class="text-2xl font-extrabold">Book a Free Site Visit</h3>
+                    <form id="quote-form" class="mt-4 grid gap-4">
+                        <input name="name" required placeholder="Full Name" class="px-3 py-2 rounded-xl border" />
+                        <input name="phone" required placeholder="Phone Number" class="px-3 py-2 rounded-xl border" />
+                        <input name="city" required placeholder="City / Area" class="px-3 py-2 rounded-xl border" />
+                        <textarea name="notes" rows="4" placeholder="Any specific rooms, colours, timeline..." class="px-3 py-2 rounded-xl border"></textarea>
+                        <button type="submit" class="px-4 py-3 rounded-2xl bg-neutral-900 text-white font-semibold">Send on WhatsApp</button>
+                        <p class="text-xs text-neutral-500">By continuing, you agree to be contacted about your request.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery" class="py-16 bg-neutral-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl font-extrabold">Gallery</h2>
+                <p class="mt-1 text-neutral-700">A peek into our recent work (before → after).</p>
+                <div class="mt-6 grid md:grid-cols-3 gap-4">
+                    <div class="rounded-2xl overflow-hidden border bg-white">
+                        <div class="aspect-video bg-gradient-to-br from-neutral-200 to-neutral-100 flex items-center justify-center text-neutral-500">Project Image 1</div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border bg-white">
+                        <div class="aspect-video bg-gradient-to-br from-neutral-200 to-neutral-100 flex items-center justify-center text-neutral-500">Project Image 2</div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border bg-white">
+                        <div class="aspect-video bg-gradient-to-br from-neutral-200 to-neutral-100 flex items-center justify-center text-neutral-500">Project Image 3</div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border bg-white">
+                        <div class="aspect-video bg-gradient-to-br from-neutral-200 to-neutral-100 flex items-center justify-center text-neutral-500">Project Image 4</div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border bg-white">
+                        <div class="aspect-video bg-gradient-to-br from-neutral-200 to-neutral-100 flex items-center justify-center text-neutral-500">Project Image 5</div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border bg-white">
+                        <div class="aspect-video bg-gradient-to-br from-neutral-200 to-neutral-100 flex items-center justify-center text-neutral-500">Project Image 6</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl font-extrabold">What Customers Say</h2>
+                <div class="mt-8 grid md:grid-cols-3 gap-5">
+                    <div class="p-5 rounded-2xl border shadow-sm bg-neutral-50">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-neutral-300"></div>
+                            <div>
+                                <div class="font-bold">Neha Sharma</div>
+                                <div class="text-xs text-neutral-500">Jaipur</div>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-sm text-neutral-700">"Living room makeover was flawless. Team was punctual and tidy."</div>
+                        <div class="mt-3 text-yellow-500">★★★★★</div>
+                    </div>
+                    <div class="p-5 rounded-2xl border shadow-sm bg-neutral-50">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-neutral-300"></div>
+                            <div>
+                                <div class="font-bold">Amit Verma</div>
+                                <div class="text-xs text-neutral-500">Delhi</div>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-sm text-neutral-700">"Great colour suggestions. Finished 3BHK in just 3 days!"</div>
+                        <div class="mt-3 text-yellow-500">★★★★★</div>
+                    </div>
+                    <div class="p-5 rounded-2xl border shadow-sm bg-neutral-50">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-neutral-300"></div>
+                            <div>
+                                <div class="font-bold">Sara Khan</div>
+                                <div class="text-xs text-neutral-500">Indore</div>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-sm text-neutral-700">"No smell, smooth finish. Totally worth it."</div>
+                        <div class="mt-3 text-yellow-500">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section id="process" class="py-16 bg-neutral-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl font-extrabold">How It Works</h2>
+                <div class="mt-8 grid md:grid-cols-4 gap-5">
+                    <div class="p-5 rounded-2xl border bg-white">
+                        <div class="w-10 h-10 rounded-xl bg-orange-500 text-white grid place-items-center font-bold">1</div>
+                        <div class="mt-3 font-bold">Free Visit</div>
+                        <div class="text-sm text-neutral-700">We inspect area & discuss colours.</div>
+                    </div>
+                    <div class="p-5 rounded-2xl border bg-white">
+                        <div class="w-10 h-10 rounded-xl bg-orange-500 text-white grid place-items-center font-bold">2</div>
+                        <div class="mt-3 font-bold">Detailed Quote</div>
+                        <div class="text-sm text-neutral-700">Transparent pricing & schedule.</div>
+                    </div>
+                    <div class="p-5 rounded-2xl border bg-white">
+                        <div class="w-10 h-10 rounded-xl bg-orange-500 text-white grid place-items-center font-bold">3</div>
+                        <div class="mt-3 font-bold">Protection & Prep</div>
+                        <div class="text-sm text-neutral-700">Covering, sanding, putty & primer.</div>
+                    </div>
+                    <div class="p-5 rounded-2xl border bg-white">
+                        <div class="w-10 h-10 rounded-xl bg-orange-500 text-white grid place-items-center font-bold">4</div>
+                        <div class="mt-3 font-bold">Perfect Finish</div>
+                        <div class="text-sm text-neutral-700">Two coats, clean up & walkthrough.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl font-extrabold">FAQ</h2>
+                <div class="mt-6 grid md:grid-cols-2 gap-5">
+                    <div class="p-5 rounded-2xl border bg-neutral-50">
+                        <div class="font-bold">Kitna time lagta hai?</div>
+                        <div class="mt-2 text-sm text-neutral-700">1BHK interior usually 1–2 din, 2/3BHK 2–4 din depending on prep & drying.</div>
+                    </div>
+                    <div class="p-5 rounded-2xl border bg-neutral-50">
+                        <div class="font-bold">Paint smell?</div>
+                        <div class="mt-2 text-sm text-neutral-700">Low‑VOC paints available for almost no odour and safer indoor air.</div>
+                    </div>
+                    <div class="p-5 rounded-2xl border bg-neutral-50">
+                        <div class="font-bold">Guarantee milti hai?</div>
+                        <div class="mt-2 text-sm text-neutral-700">Yes, workmanship assurance + manufacturer warranty on premium paints.</div>
+                    </div>
+                    <div class="p-5 rounded-2xl border bg-neutral-50">
+                        <div class="font-bold">Payment process?</div>
+                        <div class="mt-2 text-sm text-neutral-700">Advance to block dates, milestone‑based during work, balance on completion.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-16 bg-neutral-900 text-neutral-50">
+            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-10 items-start">
+                <div class="md:col-span-2">
+                    <h2 class="text-3xl font-extrabold">Get in Touch</h2>
+                    <p class="mt-2 text-neutral-300">Call, WhatsApp, or fill the form to get a free consultation.</p>
+                    <div class="mt-5 grid sm:grid-cols-3 gap-4 text-sm">
+                        <a class="p-4 rounded-2xl bg-white text-neutral-900 font-semibold" href="tel:+918340271325">📞 +91 83402 71325</a>
+                        <a class="p-4 rounded-2xl bg-white text-neutral-900 font-semibold" href="mailto:happywalls@gmail.com">✉ happywalls@gmail.com</a>
+                        <div class="p-4 rounded-2xl bg-white text-neutral-900 font-semibold">📍 Barh, Patna, Bihar – 803213</div>
+                    </div>
+                </div>
+                <div class="p-6 bg-neutral-800 rounded-2xl border border-neutral-700">
+                    <div class="font-bold">Business Hours</div>
+                    <div class="mt-2 text-sm text-neutral-300">Mon–Sun: 9:00 AM – 7:00 PM</div>
+                    <div class="mt-4 font-bold">Follow</div>
+                    <div class="mt-2 flex gap-3 text-sm text-neutral-300">
+                        <a href="#" class="underline">Instagram</a>
+                        <a href="#" class="underline">Facebook</a>
+                        <a href="#" class="underline">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 text-center text-xs text-neutral-400">© <span id="current-year"></span> HappyWalls. All rights reserved.</div>
+        </section>
+
+        <!-- Floating WhatsApp -->
+        <a href="https://wa.me/919999999999" target="_blank" class="fixed bottom-5 right-5 px-4 py-3 rounded-full bg-green-500 text-white font-bold shadow-lg">WhatsApp</a>
+    </div>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('button[data-section], #home-link').forEach(button => {
+            button.addEventListener('click', function() {
+                const sectionId = this.getAttribute('data-section') || 'home';
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Quote calculator functionality
+        const pricePerSqft = {
+            economy: 12,
+            standard: 18,
+            premium: 28
+        };
+
+        const brandByQuality = {
+            economy: "Economy",
+            standard: "Standard",
+            premium: "Premium"
+        };
+
+        document.getElementById('calculate-btn').addEventListener('click', function() {
+            const area = Number(document.getElementById('area-input').value);
+            const rooms = Number(document.getElementById('rooms-input').value);
+            const quality = document.getElementById('quality-select').value;
+            
+            if (!area || area <= 0) {
+                alert('Please enter a valid area');
+                return;
+            }
+            
+            const base = pricePerSqft[quality];
+            const paint = area * base;
+            const labour = Math.round(paint * 0.35 + rooms * 300);
+            const total = Math.round(paint + labour);
+            
+            document.getElementById('paint-cost').textContent = '₹' + Math.round(paint).toLocaleString('en-IN');
+            document.getElementById('labour-cost').textContent = '₹' + labour.toLocaleString('en-IN');
+            document.getElementById('total-cost').textContent = '₹' + total.toLocaleString('en-IN');
+            document.getElementById('estimate-result').classList.remove('hidden');
+        });
+
+        document.getElementById('reset-btn').addEventListener('click', function() {
+            document.getElementById('area-input').value = '';
+            document.getElementById('rooms-input').value = '1';
+            document.getElementById('quality-select').value = 'standard';
+            document.getElementById('estimate-result').classList.add('hidden');
+        });
+
+        // WhatsApp form submission
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = String(formData.get('name') || '');
+            const phone = String(formData.get('phone') || '');
+            const city = String(formData.get('city') || '');
+            
+            const area = document.getElementById('area-input').value || '-';
+            const rooms = document.getElementById('rooms-input').value || '-';
+            const quality = document.getElementById('quality-select').value;
+            const qualityLabel = brandByQuality[quality] || '-';
+            
+            const totalElement = document.getElementById('total-cost');
+            const total = totalElement.textContent.replace('₹', '') || '-';
+            
+            const msg = encodeURIComponent(
+                `Hello HappyWalls!\nName: ${name}\nPhone: ${phone}\nCity: ${city}\nArea: ${area} sqft\nRooms: ${rooms}\nQuality: ${qualityLabel}\nEstimate: ₹${total}`
+            );
+            
+            // Replace with your WhatsApp number in international format without '+' e.g. 919876543210
+            const waNumber = "918340271325";
+            window.open(`https://wa.me/${waNumber}?text=${msg}`, "_blank");
+        });
+    </script>
+</body>
+</html>
